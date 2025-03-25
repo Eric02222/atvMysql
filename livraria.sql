@@ -79,7 +79,7 @@ VALUES
 ('Matt Haig', 13212359),
 ('Dawn Kurtagich,', 12633369),
 ('Jennifer L. Armentrout', 48502249),
-('André Moragas, Nathalia Alvitos', 489532669);
+(' Sarah A. Parker', 489532669);
 
 INSERT INTO financiador
 (nome_fin, cnpj_fin)
@@ -100,8 +100,19 @@ VALUES
 ('Murilo Santos', 427341454, 13845497);
 
 INSERT INTO livro 
-(isbn_livro, titulo, preco, categoria, )
+(isbn_livro, titulo, preco, categoria, editora_id, autor_id, financiador_id)
 VALUES
-()
+(9783785746042, 'Shining', 43.27, 'Fantasy Horror', 2, 1, 5),
+(1483724746062, 'The Dead House', 112.45, 'Suspense', 4, 3, 2),
+(6323785796528, 'A Biblioteca da Meia-Noite', 31.67, 'Ficção científica', 5, 2, 1),
+(5273789345422, 'From Blood and Ash', 49.90, 'Romance de amor', 1, 4, 3),
+(9213885746091, 'O despertar da lua caída', 89.90, 'Fantasia romântica', 3, 5, 4);
 
-SELECT * FROM cliente;
+INSERT INTO pedido 
+(qtd_pedido, livro_id, cliente_id)
+VALUES 
+(4, 3, 2),
+(1, 5, 4),
+(5, 1, 3),
+(2, 2, 5),
+(3, 5, 1);
