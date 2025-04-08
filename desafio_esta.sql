@@ -21,8 +21,25 @@ VALUES
 ('Estacionamneto F', 85, 'Sim', 'Sim'),
 ('Estacionamneto G', 100, 'Não', 'Não');
 
-SELECT estacionamento.nome, estacionamento.capacidade, estacionamento.subsolo, estacionamento.especial FROM estacionamento
+SELECT estacionamento.nome, estacionamento.capacidade FROM estacionamento
 WHERE estacionamento.capacidade BETWEEN 20 AND 40
 AND estacionamento.subsolo LIKE 'Sim'
 AND estacionamento.especial LIKE 'Sim';
+
+SELECT nome, capacidade FROM estacionamento
+WHERE capacidade >= 20 AND capacidade <= 40 AND subsolo = 'Sim' AND especial = 'SIM'
+ORDER BY capacidade ASC;
+
+SELECT * FROM estacionamento
+WHERE capacidade >= 50
+ORDER BY capacidade DESC;
+
+SELECT * FROM estacionamento
+WHERE capacidade >= 80 OR nome = 'Estacionamneto B'
+ORDER BY capacidade ASC;
+
+
+SELECT * FROM estacionamento
+WHERE subsolo = 'Sim' AND especial = 'SIM'
+ORDER BY capacidade ASC;
 
