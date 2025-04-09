@@ -63,6 +63,23 @@ ON cliente.id_cliente = mensalidade.cliente_id
 GROUP BY cliente.nome;
 
 
+-- Utilizar o max para mostrar os valoras mais altos
+SELECT cliente.nome, max(mensalidade.valor) AS Maior_Valor_Da_Mensalidade FROM mensalidade
+JOIN cliente
+ON cliente.id_cliente = mensalidade.cliente_id
+GROUP BY cliente.nome;
+
+-- Utilizar o max para mostrar os valoras mais altos
+SELECT cliente.nome, min(mensalidade.valor) AS Valor_Mais_Barato_Da_Mensalidade FROM mensalidade
+JOIN cliente
+ON cliente.id_cliente = mensalidade.cliente_id
+GROUP BY cliente.nome;
+
+-- DISTINCT comando com a mesma função do GROUP BY (Agrupar valores duplicados)
+SELECT DISTINCT cliente.nome FROM mensalidade
+JOIN cliente
+ON cliente.id_cliente = mensalidade.cliente_id
+
 
 
 
