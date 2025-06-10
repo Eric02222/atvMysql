@@ -4,7 +4,7 @@ USE posto_gasolina;
 CREATE TABLE produto (
 	id_produto INT NOT NULL AUTO_INCREMENT,
     nome VARCHAR(45),
-    valor DECIMAL(8.2) DEFAULT (6.50),
+    valor DECIMAL(8, 2) DEFAULT 6.50,
     estoque INT,
     CHECK (estoque >= 0),
     PRIMARY KEY (id_produto)
@@ -13,7 +13,7 @@ CREATE TABLE produto (
 CREATE TABLE pedido (
 	id_pedido INT NOT NULL AUTO_INCREMENT,
     data_horario DATETIME,
-    quantidade DECIMAL(8.2),
+    quantidade DECIMAL(8, 2),
     produto_id INT,
     FOREIGN KEY (produto_id)
     REFERENCES produto (id_produto),
@@ -57,3 +57,4 @@ VALUES
 ('2025-2-8 12:21:00', 10.5, 1);
 
 SELECT * FROM pedido;
+
